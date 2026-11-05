@@ -3,7 +3,7 @@
 A separate, from-scratch recreation of the EduNexus Learning Management System
 (reference: https://github.com/kbhujbal/EduNexus-Full-Stack-Learning-Management-System).
 It reproduces the reference UI and its declared API surface, but this time they actually work.
-The full reverse-engineering analysis lives in `../analysis/`.
+The full reverse-engineering analysis lives in [`docs/`](docs/README.md).
 
 | Layer | Stack |
 |---|---|
@@ -76,7 +76,7 @@ cd frontend && npm run build     # typecheck + production build
 Errors always use `{ "message": "...", "errors"?: { "field": "reason" } }`. OpenAPI docs are served at `/swagger-ui.html`.
 
 ## Deliberate differences from the reference
-See `../analysis/recreation-architecture.md` §8 (D1–D12). In short:
+See [`docs/recreation-architecture.md`](docs/recreation-architecture.md) §8 (D1–D12). In short:
 * Vite instead of CRA.
 * Login password minimum 6 (matching registration).
 * Session restore after a reload.
