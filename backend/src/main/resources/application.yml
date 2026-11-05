@@ -1,0 +1,31 @@
+server:
+  port: ${PORT:8083}
+
+spring:
+  application:
+    name: edunexus-recreation
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/edunexus}
+      auto-index-creation: true
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  jwt:
+    # Supply via environment. When blank, a random per-process secret is generated (dev only).
+    secret: ${JWT_SECRET:}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors:
+    allowed-origins: ${CORS_ORIGIN:http://localhost:3000}
+  demo-data: ${DEMO_DATA:false}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.edunexus: INFO
